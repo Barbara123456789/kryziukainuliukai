@@ -15,7 +15,7 @@ do
     zaid=2;
 
 if(zaid==2)
-{ cout<<setw(5)<<" "<<"Zaidejo " << zaid<<", ejimas: "<<endl;
+{
    cout<<setw(5)<<" " <<"Jei norite zaisti su kompiuteriu spauskite Enter ;) \n\t Jei ne, tada antro zaidejo ejimas."<<endl;
    sk=rand()%9;
    zyme='O';
@@ -90,7 +90,7 @@ cout<<setw(4)<<" "<<"Klaidingas ejimas. Irasytas netinkamas skaicius. Spasuskite
 }while(i==-1);
    lentele(kvadratouzp);
      if(i==1)
-{cout<<setw(8)<<"Zaideja "<<--zaid<<". Laimejo! ";}
+{cout<<setw(8)<<""<<"Zaideja "<<--zaid<<". Laimejo! ";}
 else
 cout<<"Ups! Lygiosios... Kas laimes kita karta?.. ";
 
