@@ -1,4 +1,4 @@
-# kryziukainuliukai
+# Kryziukai - nuliukai
 Kryžiukų nuliukų žaidimas C++ kalba
 
 Tai parastas ir daugelio mėgstamas „Kryžiukų - nuliukų” žaidimo variantas. Šio žaidimo kode panaudotas išskaidymas į funkcijas ir header
