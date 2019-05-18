@@ -1,102 +1,106 @@
-#include <iostream>
-#include <iomanip>
-using namespace std;
+#include "Bibliotekos, zaidimo lentele ir laimejimo tikrinimas.h"
 
-char kvadratouzp[10] = {'o','1','2','3','4','5','6','7','8','9'};
-
-int tiklaim()
+int main()
 {
-    if (kvadratouzp[1] == kvadratouzp[2] && kvadratouzp[2] == kvadratouzp[3])
-		return 1;
-	else if (kvadratouzp[4] == kvadratouzp[5] && kvadratouzp[5] == kvadratouzp[6])
-		return 1;
-	else if (kvadratouzp[7] == kvadratouzp[8] && kvadratouzp[8] == kvadratouzp[9])
-		return 1;
-	else if (kvadratouzp[1] == kvadratouzp[4] && kvadratouzp[4] == kvadratouzp[7])
-		return 1;
-	else if (kvadratouzp[2] == kvadratouzp[5] && kvadratouzp[5] == kvadratouzp[8])
-		return 1;
-	else if (kvadratouzp[3] == kvadratouzp[6] && kvadratouzp[6] == kvadratouzp[9])
-		return 1;
-	else if (kvadratouzp[1] == kvadratouzp[5] && kvadratouzp[5] == kvadratouzp[9])
-		return 1;
-	else if (kvadratouzp[3] == kvadratouzp[5] && kvadratouzp[5] == kvadratouzp[7])
-		return 1;
-	else if (kvadratouzp[1] != '1' && kvadratouzp[2] != '2' && kvadratouzp[3] != '3' && kvadratouzp[4] != '4' && kvadratouzp[5] != '5' && kvadratouzp[6] != '6' && kvadratouzp[7] != '7' && kvadratouzp[8] != '8' && kvadratouzp[9] != '9')
-		return 0;
-	else
-		return -1;
+char kvadratouzp[10] = {'o','1','2','3','4','5','6','7','8','9'};
+int zaid = 1,i,sk;
+char zyme;
+
+do
+{
+   lentele(kvadratouzp);
+   if(zaid%2==1)
+    zaid=1;
+   else
+    zaid=2;
+
+if(zaid==2)
+{ cout<<setw(5)<<" "<<"Zaidejo " << zaid<<", ejimas: "<<endl;
+   cout<<setw(5)<<" " <<"Jei norite zaisti su kompiuteriu spauskite Enter ;)"<<endl;
+   sk=rand()%9;
+   zyme='O';
+
+   int turn=1;
+   int viet=0;
+       while(viet==0)
+        {
+            if (sk == 1 && kvadratouzp[1] == '1'){
+                kvadratouzp[1] = zyme;
+       viet=1;}
+       else if (sk == 2 && kvadratouzp[2] == '2'){
+            kvadratouzp[2] = zyme; viet=1;}
+             else if (sk == 3 && kvadratouzp[3] == '3'){
+                    kvadratouzp[3] = zyme;
+             viet=1;}
+             else if (sk == 4 && kvadratouzp[4] == '4'){
+                    viet=1;
+             kvadratouzp[4] = zyme;}
+             else if (sk == 5 && kvadratouzp[5] == '5'){
+                    kvadratouzp[5] = zyme;
+             viet=1;} else if (sk == 6 && kvadratouzp[6] == '6'){
+                 kvadratouzp[6] = zyme;
+                 viet=1;}
+                 else if (sk == 7 && kvadratouzp[7] == '7'){
+                        kvadratouzp[7] = zyme; viet=1;}
+                 else if (sk == 8 && kvadratouzp[8] == '8'){
+                        kvadratouzp[8] = zyme;
+                 viet=1;}
+                 else if (sk == 9 && kvadratouzp[9] == '9'){
+                        kvadratouzp[9] = zyme;
+                 viet=1;}
+                 else  { sk=rand()%9;}
+}
+   i=tikrin(kvadratouzp);
+   zaid++;
+   _getche();
+   lentele(kvadratouzp);
+}
+   else if(zaid==1)
+{
+cout<<setw(5)<<" " << "Zaidejo "<< zaid << ", ejimas:  ";
+cin >> sk;
+zyme='X';
+
+if (sk == 1 && kvadratouzp[1] == '1')
+kvadratouzp[1] = zyme;
+else if (sk == 2 && kvadratouzp[2] == '2')
+kvadratouzp[2] = zyme;
+else if (sk == 3 && kvadratouzp[3] == '3')
+kvadratouzp[3] = zyme;
+else if (sk == 4 && kvadratouzp[4] == '4')
+kvadratouzp[4] = zyme;
+else if (sk == 5 && kvadratouzp[5] == '5')
+kvadratouzp[5] = zyme;
+else if (sk == 6 && kvadratouzp[6] == '6')
+kvadratouzp[6] = zyme;
+else if (sk == 7 && kvadratouzp[7] == '7')
+kvadratouzp[7] = zyme;
+else if (sk == 8 && kvadratouzp[8] == '8')
+kvadratouzp[8] = zyme;
+else if (sk == 9 && kvadratouzp[9] == '9')
+kvadratouzp[9] = zyme;
+else
+{
+cout<<setw(4)<<" "<<"Klaidingas ejimas. Irasytas netinkamas skaicius. Spasuskite Enter ir paradekite ejima is naujo.";
+  zaid--;
+   _getche();
+}
+   i=tikrin(kvadratouzp);
+   zaid++;}
+}while(i==-1);
+   lentele(kvadratouzp);
+     if(i==1)
+{cout<<setw(8)<<"Zaideja "<<--zaid<<". Laimejo! ";}
+else
+cout<<"Ups! Lygiosios... Kas laimes kita karta?.. ";
+
+    cout <<endl;
+	cout <<setw(60)<<" "<<"Parenge: B.K. MRf-17"<< endl;
+	cout <<endl;
+
+_getche();
 }
 
-void lent()
-{
-	system("cls");
-	cout <<setw(20)<<" "<< "\n\n\t Kryziuku kuliuku zaidimas \n\n";
-	cout <<setw(8)<<" "<< "Pirmas zaidejas (X)  -   Antras zaidejas  (O)" << endl << endl;
-	cout << endl;
-	cout <<setw(16)<<" "<< "     |     |     " << endl;
-	cout <<setw(16)<<" "<< "  " << kvadratouzp[1] << "  |  " << kvadratouzp[2] << "  |  " << kvadratouzp[3] << endl;
-	cout <<setw(16)<<" "<< "_____|_____|_____" << endl;
-	cout <<setw(16)<<" "<< "     |     |     " << endl;
-	cout <<setw(16)<<" "<< "  " << kvadratouzp[4] << "  |  " << kvadratouzp[5] << "  |  " << kvadratouzp[6] << endl;
-	cout <<setw(16)<<" "<< "_____|_____|_____" << endl;
-	cout <<setw(16)<<" "<< "     |     |     " << endl;
-	cout <<setw(16)<<" "<< "  " << kvadratouzp[7] << "  |  " << kvadratouzp[8] << "  |  " << kvadratouzp[9] << endl;
-	cout <<setw(16)<<" "<< "     |     |     " << endl << endl;
-};
-
-int main() {
-	int zaidejas = 1,i,ejimas;
-	char zyme, op2;
 
 
-	do
-	{  lent();
-		zaidejas=(zaidejas%2)? 1:2;
-		cout <<setw(4)<<" " << " Zaidejau " << zaidejas << ", irasykite savo ejimo skaiciu:  ";
-		cin >> ejimas;
-		zyme=(zaidejas == 1) ? 'X' : 'O';
-		if (ejimas == 1 && kvadratouzp[1] == '1')
-			kvadratouzp[1] = zyme;
-		else if (ejimas == 2 && kvadratouzp[2] == '2')
-			kvadratouzp[2] = zyme;
-		else if (ejimas == 3 && kvadratouzp[3] == '3')
-			kvadratouzp[3] = zyme;
-		else if (ejimas == 4 && kvadratouzp[4] == '4')
-			kvadratouzp[4] = zyme;
-		else if (ejimas == 5 && kvadratouzp[5] == '5')
-			kvadratouzp[5] = zyme;
-		else if (ejimas == 6 && kvadratouzp[6] == '6')
-			kvadratouzp[6] = zyme;
-		else if (ejimas == 7 && kvadratouzp[7] == '7')
-			kvadratouzp[7] = zyme;
-		else if (ejimas == 8 && kvadratouzp[8] == '8')
-			kvadratouzp[8] = zyme;
-		else if (ejimas == 9 && kvadratouzp[9] == '9')
-			kvadratouzp[9] = zyme;
-		else
-		{
-			cout<<setw(4)<<" "<<"Klaidingas ejimas. Irasytas netinkamas skaicius. Spasuskite Enter ir paradekite ejima is naujo.";
-			zaidejas--;
-			cin.ignore();
-			cin.get();
-		}
-		i=tiklaim();
-		zaidejas++;
-		//cout << "Ar norite zaisti toliau? (t)" << endl;
-        //cin >> op2;
-		}// while (op2 == 't');
-
-
-    while(i==-1);
-	lent();
-	if(i==1)
-		cout<<setw(8)<<" "<<" Zaidejas "<<--zaidejas<<" laimejo ";
-	else
-		cout<<setw(8)<<" "<<"Zaidimas baigtas. Lygiosios";
-
-
-    return 1;
-
-};
 
