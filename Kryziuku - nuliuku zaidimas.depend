@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1558185009 source:c:\users\barbora\desktop\kryziuku - nuliuku zaidimas\main.cpp
+1558185078 source:c:\users\barbora\desktop\kryziuku - nuliuku zaidimas\main.cpp
 	"Bibliotekos, zaidimo lentele ir laimejimo tikrinimas.h"
 
-1558185009 c:\users\barbora\desktop\kryziuku - nuliuku zaidimas\bibliotekos, zaidimo lentele ir laimejimo tikrinimas.h
+1558187028 c:\users\barbora\desktop\kryziuku - nuliuku zaidimas\bibliotekos, zaidimo lentele ir laimejimo tikrinimas.h
 	<iostream>
 	<conio.h>
 	<iomanip>

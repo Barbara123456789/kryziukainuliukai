@@ -16,7 +16,7 @@ do
 
 if(zaid==2)
 { cout<<setw(5)<<" "<<"Zaidejo " << zaid<<", ejimas: "<<endl;
-   cout<<setw(5)<<" " <<"Jei norite zaisti su kompiuteriu spauskite Enter ;)"<<endl;
+   cout<<setw(5)<<" " <<"Jei norite zaisti su kompiuteriu spauskite Enter ;) \n\t Jei ne, tada antro zaidejo ejimas."<<endl;
    sk=rand()%9;
    zyme='O';
 

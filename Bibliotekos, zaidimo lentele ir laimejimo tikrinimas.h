@@ -14,7 +14,7 @@ void lentele(char[]);
 void lentele(char kvadratouzp[])
 {
 system("cls");
-    cout <<setw(20)<<" "<< "\n\n\t Kryziuku nuliuku zaidimas \n\n";
+    cout <<setw(50)<<" "<< "\n\n\t\t Kryziuku - nuliuku zaidimas \n\n";
 	cout <<setw(8)<<" "<< "Pirmas zaidejas (X)  -   Antras zaidejas  (O)" << endl << endl;
 	cout <<endl;
 	cout <<setw(16)<<" "<< "     |     |     " << endl;
