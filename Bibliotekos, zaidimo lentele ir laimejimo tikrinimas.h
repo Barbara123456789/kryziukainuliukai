@@ -15,7 +15,7 @@ void lentele(char kvadratouzp[])
 {
 system("cls");
     cout <<setw(50)<<" "<< "\n\n\t\t Kryziuku - nuliuku zaidimas \n\n";
-	cout <<setw(8)<<" "<< "Pirmas zaidejas (X)  -   Antras zaidejas  (O)" << endl << endl;
+	cout <<setw(8)<<" "<< "Pirmas zaidejas = Jus (X)  -   Antras zaidejas = Kompiuteris (O)" << endl << endl;
 	cout <<endl;
 	cout <<setw(16)<<" "<< "     |     |     " << endl;
 	cout <<setw(16)<<" "<< "  " << kvadratouzp[1] << "  |  " << kvadratouzp[2] << "  |  " << kvadratouzp[3] << endl;
